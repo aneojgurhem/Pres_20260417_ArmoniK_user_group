@@ -14,14 +14,14 @@
 					arr/.style={-Stealth, thick, aneoorange!80}
 				]
 				\node[box, fill=aneoblue] (ep) at (0, 0)
-					{Embarrassingly\\Parallel\\(Monte Carlo)};
+				{Embarrassingly\\Parallel\\(Monte Carlo)};
 				\draw[arr] (ep.south) -- ++(0,-0.4);
 				\node[box, fill=aneoorange] (cx) at (0, -1.8)
-					{Complex Nested\\Algorithms\\(XVA, AAD)};
+				{Complex Nested\\Algorithms\\(XVA, AAD)};
 				\draw[arr] (cx.south) -- ++(0,-0.4);
 				\node[box, fill=aneoorange!20, draw=aneoorange!60, text=aneoblack,
-						font=\tiny, minimum height=1.0cm] (lp) at (0, -3.5)
-					{Lost Properties\\Fault tolerance\\Malleability\\Cloud portability};
+					font=\tiny, minimum height=1.0cm] (lp) at (0, -3.5)
+				{Lost Properties\\Fault tolerance\\Malleability\\Cloud portability};
 			\end{tikzpicture}
 		\end{column}
 		\begin{column}{0.58\textwidth}
@@ -82,12 +82,12 @@
 				]
 				\node[mpibox] (mpi) at (0, 0) {MPI\\Rigid\\Model};
 				\node[taskbox] (tbr) at (4.2, 0) {Task-Based\\Runtimes\\[4pt]
-					{\tiny StarPU, PaRSEC}\\[-1pt]
-					{\tiny Legion, OmpSs}\\[-1pt]
-					{\tiny Charm++}};
+				{\tiny StarPU, PaRSEC}\\[-1pt]
+				{\tiny Legion, OmpSs}\\[-1pt]
+				{\tiny Charm++}};
 				\draw[arr] (mpi.east) -- (tbr.west)
-					node[midway, above, font=\tiny\itshape, text=aneoorange] {manytask}
-					node[midway, below, font=\tiny\itshape, text=aneoorange] {computing};
+				node[midway, above, font=\tiny\itshape, text=aneoorange] {manytask}
+				node[midway, below, font=\tiny\itshape, text=aneoorange] {computing};
 			\end{tikzpicture}
 		\end{column}
 	\end{columns}
@@ -121,16 +121,16 @@
 			\centering\vspace{0.3cm}
 			\begin{tikzpicture}
 				\node[rectangle, rounded corners=5pt, fill=aneoturquoise!15,
-					draw=aneoturquoise!40, text=aneoblack, text width=4.0cm,
-					align=left, inner sep=8pt, minimum height=2.8cm] (promise) at (0,0) {%
-					{\footnotesize\bfseries\color{aneoturquoise!80!black}Compelling Model}\\[4pt]
-					{\small\color{aneoblack}%
-					\begin{itemize}\setlength{\itemsep}{1pt}
-						\item[\textbullet] Elasticity
-						\item[\textbullet] Virtually unlimited resources
-						\item[\textbullet] Pay-per-use pricing
-						\item[\textbullet] Spot/preemptible instances
-					\end{itemize}}%
+				draw=aneoturquoise!40, text=aneoblack, text width=4.0cm,
+				align=left, inner sep=8pt, minimum height=2.8cm] (promise) at (0,0) {%
+				{\footnotesize\bfseries\color{aneoturquoise!80!black}Compelling Model}\\[4pt]
+				{\small\color{aneoblack}%
+				\begin{itemize}\setlength{\itemsep}{1pt}
+					\item[\textbullet] Elasticity
+					\item[\textbullet] Virtually unlimited resources
+					\item[\textbullet] Pay-per-use pricing
+					\item[\textbullet] Spot/preemptible instances
+				\end{itemize}}%
 				};
 			\end{tikzpicture}
 		\end{column}
@@ -138,16 +138,16 @@
 			\centering\vspace{0.3cm}
 			\begin{tikzpicture}
 				\node[rectangle, rounded corners=5pt, fill=aneoorange!15,
-					draw=aneoorange!40, text=aneoblack, text width=4.6cm,
-					align=left, inner sep=8pt, minimum height=2.8cm] (complex) at (0,0) {%
-					{\footnotesize\bfseries\color{aneoorange!80!black}New Complexities}\\[4pt]
-					{\small\color{aneoblack}%
-					\begin{itemize}\setlength{\itemsep}{1pt}
-						\item[\textbullet] Malleability \& fault tolerance
-						\item[\textbullet] Data movement \& lifecycle
-						\item[\textbullet] Multi-tenancy \& security
-						\item[\textbullet] Latency, portability \& cost
-					\end{itemize}}%
+				draw=aneoorange!40, text=aneoblack, text width=4.6cm,
+				align=left, inner sep=8pt, minimum height=2.8cm] (complex) at (0,0) {%
+				{\footnotesize\bfseries\color{aneoorange!80!black}New Complexities}\\[4pt]
+				{\small\color{aneoblack}%
+				\begin{itemize}\setlength{\itemsep}{1pt}
+					\item[\textbullet] Malleability \& fault tolerance
+					\item[\textbullet] Data movement \& lifecycle
+					\item[\textbullet] Multi-tenancy \& security
+					\item[\textbullet] Latency, portability \& cost
+				\end{itemize}}%
 				};
 			\end{tikzpicture}
 		\end{column}
@@ -194,16 +194,16 @@
 		]
 		% Source nodes (left) — examples included in each node
 		\node[src, fill=aneoblue!15, draw=aneoblue!40, text=aneoblue]
-			(fsi) at (0, 1.4) {FSI World\\[1pt]{\tiny\color{aneoblack!70}Dask, Symphony, DataSynapse}};
+		(fsi) at (0, 1.4) {FSI World\\[1pt]{\tiny\color{aneoblack!70}Dask, Symphony, DataSynapse}};
 		\node[src, fill=aneoturquoise!15, draw=aneoturquoise!40, text=aneoturquoise!80!black]
-			(hpc) at (0, 0) {HPC World\\[1pt]{\tiny\color{aneoblack!70}StarPU, PaRSEC, Legion, Charm++}};
+		(hpc) at (0, 0) {HPC World\\[1pt]{\tiny\color{aneoblack!70}StarPU, PaRSEC, Legion, Charm++}};
 		\node[src, fill=aneoorange!15, draw=aneoorange!40, text=aneoorange!80!black]
-			(cloud) at (0, -1.4) {Cloud World\\[1pt]{\tiny\color{aneoblack!70}Airflow, Step Functions, Ray, Dask}};
+		(cloud) at (0, -1.4) {Cloud World\\[1pt]{\tiny\color{aneoblack!70}Airflow, Step Functions, Ray, Dask}};
 
 		% Central node (right) — same width, tall enough to span all three source nodes
 		\node[src, rounded corners=6pt, fill=aneoblue, text=white,
-			font=\normalsize\bfseries, minimum height=3.8cm] (dag) at (5.5, 0)
-			{DAG of Tasks\\[2pt]{\tiny Decouple algorithm from execution}};
+		font=\normalsize\bfseries, minimum height=3.8cm] (dag) at (5.5, 0)
+		{DAG of Tasks\\[2pt]{\tiny Decouple algorithm from execution}};
 
 		% Convergence arrows — each hits the DAG box edge at source height
 		\draw[arr, aneoblue!70]       (fsi.east)   -- (dag.west |- fsi);
@@ -246,23 +246,23 @@
 	\begin{tikzpicture}[
 			% ── shared styles ──
 			data/.style={rectangle, rounded corners=3pt, fill=aneoblue!18,
-				draw=aneoblue!50, text=aneoblack, font=\footnotesize\bfseries,
-				minimum width=1.5cm, minimum height=0.55cm, align=center},
+					draw=aneoblue!50, text=aneoblack, font=\footnotesize\bfseries,
+					minimum width=1.5cm, minimum height=0.55cm, align=center},
 			task/.style={rectangle, rounded corners=10pt, fill=aneoorange!25,
-				draw=aneoorange!60, text=aneoblack, font=\footnotesize\bfseries,
-				minimum width=1.5cm, minimum height=0.55cm, align=center},
+					draw=aneoorange!60, text=aneoblack, font=\footnotesize\bfseries,
+					minimum width=1.5cm, minimum height=0.55cm, align=center},
 			result/.style={rectangle, rounded corners=3pt, fill=aneoblue!30,
-				draw=aneoblue!60, text=aneoblack, font=\footnotesize\bfseries,
-				minimum width=1.5cm, minimum height=0.55cm, align=center},
+					draw=aneoblue!60, text=aneoblack, font=\footnotesize\bfseries,
+					minimum width=1.5cm, minimum height=0.55cm, align=center},
 			smalldata/.style={rectangle, rounded corners=2pt, fill=aneoblue!18,
-				draw=aneoblue!50, text=aneoblack, font=\tiny\bfseries,
-				minimum width=1.1cm, minimum height=0.45cm, align=center},
+					draw=aneoblue!50, text=aneoblack, font=\tiny\bfseries,
+					minimum width=1.1cm, minimum height=0.45cm, align=center},
 			smalltask/.style={rectangle, rounded corners=8pt, fill=aneoorange!25,
-				draw=aneoorange!60, text=aneoblack, font=\tiny\bfseries,
-				minimum width=1.1cm, minimum height=0.45cm, align=center},
+					draw=aneoorange!60, text=aneoblack, font=\tiny\bfseries,
+					minimum width=1.1cm, minimum height=0.45cm, align=center},
 			smallresult/.style={rectangle, rounded corners=2pt, fill=aneoblue!30,
-				draw=aneoblue!60, text=aneoblack, font=\tiny\bfseries,
-				minimum width=1.3cm, minimum height=0.55cm, align=center},
+					draw=aneoblue!60, text=aneoblack, font=\tiny\bfseries,
+					minimum width=1.3cm, minimum height=0.55cm, align=center},
 			arr/.style={-Stealth, thick, aneoblue!70},
 			sarr/.style={-Stealth, thin, aneoorange!70},
 			userarr/.style={-Stealth, thick, aneoblue},
@@ -308,11 +308,11 @@
 
 		% User interaction arrows
 		\draw[userarr] (arrowstart |- 0,0.5) -- (d1.west)
-			node[pos=0.35, above, lab] {1. User provides data};
+		node[pos=0.35, above, lab] {1. User provides data};
 		\draw[userarr] (arrowstart) -- (solve.west)
-			node[pos=0.4, above, lab] {2. User submits\\the task};
+		node[pos=0.4, above, lab] {2. User submits\\the task};
 		\draw[userarr] (arrowstart |- 0,-0.5) -- (res.west)
-			node[pos=0.3, below, lab] {3. User waits for the result\\availability and downloads\\the result};
+		node[pos=0.3, below, lab] {3. User waits for the result\\availability and downloads\\the result};
 
 		% ════════════════════════════════════════════
 		%  Overlay 1 only: simple direct arrow Solve → Result
@@ -331,19 +331,19 @@
 			% Subgraph background box
 			\node[draw=aneoblue!25, fill=aneoblue!8, rounded corners=6pt,
 				inner sep=0pt, minimum width=6.2cm, minimum height=5.6cm]
-				(subbox) at (6.6, -0.5) {};
+			(subbox) at (6.6, -0.5) {};
 
 			% Step 4 label
 			\node[lab, text=aneoblack!80] at (3.3, 0.5)
-				{4. Solver submits\\subgraph and\\delegates result\\production};
+			{4. Solver submits\\subgraph and\\delegates result\\production};
 			\draw[userarr, aneoorange!80] (solve.east) -- (3.8, 0.5);
 
 			% ── Sub-data nodes (with stacked-copy effect) ──
 			\foreach \i/\xpos/\lbl in {3/4.6/Data 3, 4/5.8/Data 4, 5/7.0/Data 5, 6/8.2/Data 6}{
-				\node[smalldata, yshift=4pt, xshift=2pt, opacity=0.2] at (\xpos, 1.8) {};
-				\node[smalldata, yshift=2pt, xshift=1pt, opacity=0.4] at (\xpos, 1.8) {};
-				\node[smalldata] (sd\i) at (\xpos, 1.8) {\lbl};
-			}
+					\node[smalldata, yshift=4pt, xshift=2pt, opacity=0.2] at (\xpos, 1.8) {};
+					\node[smalldata, yshift=2pt, xshift=1pt, opacity=0.4] at (\xpos, 1.8) {};
+					\node[smalldata] (sd\i) at (\xpos, 1.8) {\lbl};
+				}
 
 			% Data 2 → sub-data (dashed fan-out, curving above the subgraph)
 			\draw[arr, dashed] (d2.east) .. controls +(1.5,0.8) and +(-0.5,0.8) .. (sd3.north);
