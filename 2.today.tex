@@ -23,35 +23,33 @@
 \begin{frame}{Ecosystem \& Deployment}
 	\begin{columns}[T]
 		\begin{column}{0.48\textwidth}
-			{\small\bfseries\color{aneoblue}SDKs \& APIs}\\[4pt]
+			{\small\bfseries\color{aneoblue}SDKs \& APIs}\\[3pt]
 			\begin{itemize}
-				\item \textbf{Interopable SDKs}: C\#, C++, Java
+				\item \textbf{Interoperable SDKs}: C\#, C++, Java
 				\item \textbf{Specific SDKs}: Python (Pymonik)
 				\item \textbf{APIs}: C\#, C++, Java, Rust, Javascript, Python
 				\item \textbf{gRPC}: any language
 			\end{itemize}
-			\vspace{0.3cm}
-			{\small\bfseries\color{aneoblue}Observability Stack}\\[4pt]
+			{\small\bfseries\color{aneoblue}Backend Adapters}\\[3pt]
 			\begin{itemize}
-				\item Grafana dashboards, Prometheus metrics
-				\item CLEF structured logs, OpenTelemetry tracing
-				\item Admin GUI: session, task, result and partitions monitoring
+				\item \textbf{Object Storage}: S3, MinIO, GCS
+				\item \textbf{Queue}: SQS, PubSub, Nats, RabbitMQ, ActiveMQ
+				\item \textbf{Database}: Percona MongoDB
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.48\textwidth}
-			{\small\bfseries\color{aneoblue}Deployment Infrastructure}\\[4pt]
+			{\small\bfseries\color{aneoblue}Deployment Infrastructure}\\[3pt]
 			\begin{itemize}
 				\item Kubernetes with Helm and Terraform
 				\item AWS, Google Cloud Platform
 				\item On-premises Kubernetes
 				\item Local development mode
 			\end{itemize}
-			\vspace{0.3cm}
-			{\small\bfseries\color{aneoblue}Backend Adapters}\\[4pt]
+			{\small\bfseries\color{aneoblue}Observability Stack}\\[3pt]
 			\begin{itemize}
-				\item \textbf{Object Storage}: S3, MinIO, GCS
-				\item \textbf{Queue}: SQS, PubSub, Nats, RabbitMQ, ActiveMQ, Nats JetStream
-				\item \textbf{Database}: Percona MongoDB
+				\item Grafana dashboards, Prometheus metrics
+				\item CLEF structured logs, OpenTelemetry tracing
+				\item Admin GUI: session, task, result and partitions monitoring
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -86,7 +84,6 @@
 			      \item Provide \textbf{high-level API} to implement Workers.
 			      \item Provide \textbf{similar clients} to define graphs and submit tasks to ArmoniK's control plane.
 			      \item Provide \textbf{conventions and best practices} for error handling, idempotency, and observability.
-			      \item Ensure \textbf{compatibility and maintainability} across different ArmoniK versions.
 		      \end{itemize}
 		\item \textbf{Python SDK (Pymonik):} User-friendly API for data science and machine learning workloads; in early access
 	\end{itemize}
@@ -100,7 +97,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{How to write an ArmoniK application in Python?}
+	\frametitle{ArmoniK application in Python (for POCs)?}
 	\begin{block}{Definition: Task-based Programming Model}
 		Paradigm focusing on the decomposition of complex operations into smaller tasks
 	\end{block}
@@ -140,7 +137,7 @@
 % \end{frame}
 
 \begin{frame}
-	\frametitle{How to write a dynamic graph in ArmoniK in Python?}
+	\frametitle{Dynamic Graph in Python (for POCs)?}
 	\begin{block}{Definition: Dynamic Task Graph}
 		Dependency graph is not fully known when scheduling starts.
 	\end{block}
@@ -150,7 +147,7 @@
 		\item Tasks can submit new tasks
 		\item Tasks can delegate the production of their output to their new tasks
 	\end{itemize}
-	\footnotesize
+	\small
 	\inputminted{python}{subtasking.py}
 \end{frame}
 
@@ -202,7 +199,7 @@
 \begin{frame}{Fault Tolerant}
 	\begin{itemize}
 		\item \textbf{Automatic Recovery:} Failed tasks are retried or rescheduled transparently
-		\item \textbf{Idempotent Operations:} Safe retries with consistent outcomes guaranteed by the task state machine
+		\item \textbf{Idempotent Operations:} Safe retries with consistent outcomes guaranteed by a task state machine
 		\item \textbf{Failure Isolation:} Failures contained to partitions and workers without cascading
 		\item \textbf{Graceful Degradation:} ArmoniK services restart without impacting in-flight tasks
 		\item \textbf{Grace Delays:} Configurable grace periods allow tasks to complete gracefully even during failures, maximizing successful task completion
@@ -245,18 +242,18 @@
 \begin{frame}{Easy to Use \& Deploy}
 	We provide tools and scripts to simplify the deployment and usage of ArmoniK, but we also designed the platform to be as user-friendly as possible for developers and operators.
 	\begin{itemize}
-		\item \textbf{Local Development:} K3s installation on WSL2 with Kubernetes based deployment for easy testing and debugging
+		\item \textbf{Local Development:} K3s installation (on WSL2 if on Windows) with Kubernetes based deployment for easy testing and debugging
 		\item \textbf{Vanilla Kubernetes:} Run on any Kubernetes cluster
 		\item \textbf{Multi-cloud Support:} Reference deployments for AWS, and GCP
-		\item \textbf{Bare-metal Windows:} Run with workers running on Windows Server, orchestrator on Linux
-		\item \textbf{Slurm-based Supercomputer:} Run on high-performance computing clusters managed by Slurm
+		\item \textbf{Bare-metal Windows:} Docker Compose-based deployment for on-premises Windows Server environments
+		\item \textbf{Slurm-based Supercomputer:} Slurm job submission-based deployment for HPC clusters
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Malleable}
 	ArmoniK scales differently depending on the deployment environment and workload characteristics:
 	\begin{itemize}
-		\item \textbf{Local Development:} Limited to single-node execution with K3s on WSL2, but supports the same APIs and task graph features as the full cluster deployment
+		\item \textbf{Local Development:} Limited to single-node execution with K3s (on WSL2 if on Windows), but supports the same APIs and task graph features as the full cluster deployment
 		\item \textbf{Vanilla Kubernetes:} Scales horizontally by adding more worker nodes; stateless orchestrator components can be replicated for high availability
 		\item \textbf{Multi-cloud Support:} Scales dynamically with the computing needs; Pay-as-you-go model on cloud providers allows for cost-effective scaling; Cost-effective scaling with auto-scaling groups and spot instances
 		\item \textbf{Bare-metal Windows:} Static worker deployment with manual scaling

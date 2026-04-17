@@ -1,5 +1,3 @@
-from pymonik import Pymonik, task
-
 @task 
 def add_one(a:int) -> int:
     return a + 1

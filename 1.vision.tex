@@ -241,7 +241,7 @@
 %% ── END: Frame 4 ──
 
 % Frames 4a–4b: Dynamic Graphs (single frame, two overlays)
-\begin{frame}<1-2>{Dynamic Graphs can Fully Describe Complex Algorithms}
+\begin{frame}<1-2>{Dynamic Algorithms}
 	\centering\vspace{0.1cm}
 	\begin{tikzpicture}[
 			% ── shared styles ──
@@ -326,7 +326,7 @@
 		% ════════════════════════════════════════════
 		\only<2>{%
 			% Solve → Result (delegated, still present)
-			\draw[arr] (solve.south) -- (res.north);
+			\draw[arr, dotted] (solve.south) -- (res.north);
 
 			% Subgraph background box
 			\node[draw=aneoblue!25, fill=aneoblue!8, rounded corners=6pt,
